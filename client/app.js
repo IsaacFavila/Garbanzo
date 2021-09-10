@@ -1,14 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-
+import GenreList from './components/GenreList.jsx';
+import genreData from './data/genreData.js';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      genres: genreData
+    }
+    // binds
+  }
+  // functions
   render () {
     return (
     <div>
-      <div>Test placeholder</div>
+      <GenreList genres={this.state.genres}/>
       <div>Genre placeholder</div>
-    </div>)
+    </div>
+    );
   }
 }
 
