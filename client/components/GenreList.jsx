@@ -1,9 +1,9 @@
-import react from 'react';
+import React from 'react';
 import GenreListEntry from './GenreListEntry.jsx';
 
 const GenreList = ({genres}) => (
   <div className='genre-list'>
-    <header>Genre List</header>
+    <header>Genres explained </header>
     <ul>
       {genres.map((genre) => <GenreListEntry genre={genre.name} key={genre.id}/>)}
     </ul>
