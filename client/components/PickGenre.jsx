@@ -16,13 +16,12 @@ class PickGenre extends React.Component {
 
   render () {
     return (
-      <PickGenreStyle>What genre do you prefer? <br></br><br></br>
+      <PickGenreStyle>What genre do you prefer? <br></br>
         <input type='radio' name='genre'/>{this.props.genres[0].name}
         <input type='radio' name='genre'/>{this.props.genres[1].name}
         <input type='radio' name='genre'/>{this.props.genres[2].name}
         <input type='radio' name='genre'/>{this.props.genres[3].name}
         <input type='radio' name='genre'/>{this.props.genres[4].name}
-        <input type='radio' name='genre'/>{this.props.genres[5].name}
       </PickGenreStyle>
 
     );

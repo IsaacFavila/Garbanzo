@@ -1,28 +1,24 @@
 var genreData = [
   {
     id: 1,
-    name: 'Comedy'
+    name: 'Action'
   },
   {
     id: 2,
-    name: 'Psychological'
+    name: 'Anime'
   },
   {
     id: 3,
-    name: 'Romance'
+    name: 'Crime'
   },
   {
     id: 4,
-    name: 'Shounen'
+    name: 'Drama'
   },
   {
     id: 5,
-    name: 'Slice of life'
+    name: 'Reality'
   },
-  {
-    id: 6,
-    name: 'Other'
-  }
 ];
 
 export default genreData;

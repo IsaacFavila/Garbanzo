@@ -3,6 +3,7 @@ import GenreList from './components/GenreList.jsx';
 import genreData from './data/genreData.js';
 import AboutMe from './components/AboutMe.jsx';
 import styled from 'styled-components';
+import PickPlatform from './components/PickPlatform.jsx';
 import PickGenre from './components/PickGenre.jsx';
 import PickLength from './components/PickLength.jsx';
 import PickAspect from './components/PickAspect.jsx';
@@ -29,9 +30,10 @@ class App extends React.Component {
         </LeftStyle>
 
         <SuggestionStyle>
+          <PickPlatform />
           <PickGenre genres={this.state.genres}/>
           <PickLength />
-          <PickAspect />
+          {/* <PickAspect /> */}
           <button>Get recommendation</button>
         </SuggestionStyle>
       </BodyStyle>
@@ -57,6 +59,7 @@ var BodyStyle = styled.div`
 `;
 var LeftStyle = styled.div`
   background-color: lightblue;
+  height: 100%;
 `;
 var SuggestionStyle = styled.div`
   text-align: center;

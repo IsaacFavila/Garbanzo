@@ -16,7 +16,7 @@ class PickAspect extends React.Component {
 
   render () {
     return (
-      <PickAspectStyle>What aspect sounds most interesting? <br></br><br></br>
+      <PickAspectStyle>What aspect sounds most interesting? <br></br>
         <input type='radio' name='length'/>Animation
         <input type='radio' name='length'/>Storyline
         <input type='radio' name='length'/>Character development
