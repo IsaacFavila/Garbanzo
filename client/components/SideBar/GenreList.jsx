@@ -13,9 +13,10 @@ const GenreList = ({genres}) => (
 
 var H = styled.div`
   text-align: center;
+  margin-bottom: 15px;
 `;
-var List = styled.ul`
-  justify-content: center;
+var List = styled.div`
+  text-align: center;
 `;
 
 export default GenreList;

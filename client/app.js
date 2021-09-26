@@ -1,7 +1,8 @@
 import React from 'react';
-import GenreList from './components/GenreList.jsx';
+import GenreList from './components/SideBar/GenreList.jsx';
 import genreData from './data/genreData.js';
-import AboutMe from './components/AboutMe.jsx';
+import AboutMe from './components/SideBar/AboutMe.jsx';
+import About from './components/PageRenders/About.jsx';
 import styled from 'styled-components';
 import PickPlatform from './components/PickPlatform.jsx';
 import PickGenre from './components/PickGenre.jsx';
@@ -15,56 +16,83 @@ class App extends React.Component {
       page: 'home',
       genres: genreData
     }
-    // binds
+    this.handleAboutMe = this.handleAboutMe.bind(this);
+    this.handleBackHome = this.handleBackHome.bind(this);
   }
   // functions
+  handleAboutMe() {
+    this.setState({
+      page: 'about me'
+    });
+  }
+
+  handleBackHome() {
+    this.setState({
+      page: 'home'
+    });
+  }
   render () {
     return (
-    <WebStyle>
-      <TitleStyle>creative title</TitleStyle>
+    <Web>
+      <Title>creative title</Title>
 
-      <BodyStyle>
+      {/* Left Side */}
+      <Body>
+
         <LeftStyle>
-          <AboutMe page={this.state.page}/>
+          <AboutMe about={this.handleAboutMe}/>
           <GenreList genres={this.state.genres}/>
         </LeftStyle>
 
-        <SuggestionStyle>
-          <PickPlatform />
-          <PickGenre genres={this.state.genres}/>
-          <PickLength />
-          {/* <PickAspect /> */}
-          <button>Get recommendation</button>
-        </SuggestionStyle>
-      </BodyStyle>
 
-    </WebStyle>
+      {/* Conditional Right Side */}
+        <RightStyle>
+          {this.state.page === 'about me' ?
+            <About home={this.handleBackHome}/>
+          : ''}
+
+          {this.state.page === 'home' ?
+            <div>
+              <PickPlatform />
+              <PickGenre genres={this.state.genres}/>
+              <PickLength />
+              <button>Get recommendation</button>
+            </div>
+          : ''}
+        </RightStyle>
+
+      </Body>
+
+    </Web>
     );
   }
 }
 
-var WebStyle = styled.div`
-  height: 100%;
-  width: 100%;
+var Web = styled.div`
+  height: 100vh;
+
 `;
-var TitleStyle = styled.div`
+var Title = styled.div`
   font-size: 36px;
-  text-align: center;
+  text-align: left;
   background-color: lightblue;
   padding: 10px;
-  margin-bottom: 15px;
 `;
-var BodyStyle = styled.div`
+var Body = styled.div`
   display: flex;
+  height: 100%;
+  margin: 0;
+  min-height: 100%;
 `;
 var LeftStyle = styled.div`
   background-color: lightblue;
-  height: 100%;
+  width: 20%;
 `;
-var SuggestionStyle = styled.div`
+var RightStyle = styled.div`
   text-align: center;
   background-color: white;
   justify-content: center;
+  width: 80%;
 `;
 
 export default App;

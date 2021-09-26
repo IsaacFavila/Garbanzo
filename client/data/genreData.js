@@ -9,14 +9,18 @@ var genreData = [
   },
   {
     id: 3,
-    name: 'Crime'
+    name: 'Comedy'
   },
   {
     id: 4,
-    name: 'Drama'
+    name: 'Crime'
   },
   {
     id: 5,
+    name: 'Drama'
+  },
+  {
+    id: 6,
     name: 'Reality'
   },
 ];

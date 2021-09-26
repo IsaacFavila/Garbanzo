@@ -22,7 +22,8 @@
     "webpack-cli": "^4.8.0"
   },
   "scripts": {
-    "react-dev": "webpack --mode development --watch"
+    "react-dev": "webpack --mode development --watch",
+    "start": "nodemon server/index.js"
   },
   "repository": {
     "type": "git",

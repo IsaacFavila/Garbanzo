@@ -3,13 +3,13 @@ import styled from 'styled-components';
 
 const GenreListEntry = (props) => (
   <GenreEntryStyle>
-    <u>{props.genre}</u>
+    {props.genre}
   </GenreEntryStyle>
 )
 
 var GenreEntryStyle = styled.div`
-  margin-bottom: 25px;
-  cursor: default;
+  margin-bottom: 15px;
+  cursor: pointer;
 `;
 
 export default GenreListEntry;
