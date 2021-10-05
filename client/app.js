@@ -34,7 +34,10 @@ class App extends React.Component {
   render () {
     return (
     <Web>
-      <Title>creative title</Title>
+      <Title>
+        <Garbanzo onClick={this.handleBackHome}>laughingGarbanzo
+          </Garbanzo>
+      </Title>
 
       {/* Left Side */}
       <Body>
@@ -70,13 +73,15 @@ class App extends React.Component {
 
 var Web = styled.div`
   height: 100vh;
-
+  color: #d4b5a9;
 `;
 var Title = styled.div`
   font-size: 36px;
   text-align: left;
-  background-color: lightblue;
   padding: 10px;
+`;
+var Garbanzo = styled.div`
+  cursor: pointer;
 `;
 var Body = styled.div`
   display: flex;
@@ -85,13 +90,9 @@ var Body = styled.div`
   min-height: 100%;
 `;
 var LeftStyle = styled.div`
-  background-color: lightblue;
   width: 20%;
 `;
 var RightStyle = styled.div`
-  text-align: center;
-  background-color: white;
-  justify-content: center;
   width: 80%;
 `;
 

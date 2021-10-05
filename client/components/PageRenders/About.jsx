@@ -4,13 +4,11 @@ import styled from 'styled-components';
 const About = (props) => (
  <div>
     <Top>
-      <div onClick={props.home}>Back to home</div>
-
       <div>
-      In my free time, I like to watch TV shows, anime, and movies. Netflix, Crunchyroll, and Hulu are my most used stream platforms. As you can probably tell, my taste is all over the place. I will watch whatever I find interesting. I do have a MyAnimeList account.
+      I like to watch TV shows, anime, and movies. Netflix, Crunchyroll, and Hulu are my most used stream platforms. I have used Disney+, HBO Max, and Amazon Prime, but not nearly as much. As you can probably tell, my taste is all over the place. I will watch whatever I find interesting.
       </div>
     </Top>
-
+    <br></br>
    <Body>
     <Services>
       <br></br>
@@ -18,22 +16,21 @@ const About = (props) => (
       <Crunchyroll>Crunchyroll</Crunchyroll>
       <Hulu>Hulu</Hulu>
     </Services>
-    <Current>Currently Watching
-      <div>Lucifer</div>
-      <div>One piece</div>
+    <Current><u>Currently Watching</u>
+      <div>The Witcher</div>
+      <div>One Piece</div>
       <div>-</div>
     </Current>
-    <Recent>Recently Completed
-      <div>Outer Banks S2</div>
+    <Recent><u>Recently Completed</u>
+      <div>Squid Game</div>
       <div>Tokyo Revengers</div>
       <div>Are You the One S4 </div>
     </Recent>
-    <Favorites>Favorites
-      <div>Vampire Diares</div>
+    <Favorites><u>Favorites</u>
+      <div>Queen's Gambit</div>
       <div>Steins Gate</div>
       <div>Brooklyn Nine-Nine</div>
     </Favorites>
-
    </Body>
  </div>
 );

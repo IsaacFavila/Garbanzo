@@ -10,14 +10,13 @@ const AboutMe = (props) => (
 
 var AboutMeStyle = styled.div`
   text-align: center;
-  background: #d4b5a9;
-  height: 10%;
-  font-size: 25px;
+  margin-bottom: 15px;
 `;
 
 var Text = styled.div`
   cursor: pointer;
   vertical-align: middle;
+  text-decoration: underline;
 `;
 
 export default AboutMe;
