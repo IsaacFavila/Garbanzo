@@ -2,11 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const AboutMe = (props) => (
-  <AboutMeStyle>
-    <Text onClick={props.about}>About me</Text>
-  </AboutMeStyle>
+  <AboutMeStyle><Text onClick={props.about}>About me</Text></AboutMeStyle>
 );
-
 
 var AboutMeStyle = styled.div`
   text-align: center;

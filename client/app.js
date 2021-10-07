@@ -1,36 +1,63 @@
 import React from 'react';
 import GenreList from './components/SideBar/GenreList.jsx';
+import SubList from './components/SideBar/SubList.jsx';
 import genreData from './data/genreData.js';
+import subData from './data/subData.js';
 import AboutMe from './components/SideBar/AboutMe.jsx';
 import About from './components/PageRenders/About.jsx';
 import styled from 'styled-components';
 import PickPlatform from './components/PickPlatform.jsx';
 import PickGenre from './components/PickGenre.jsx';
 import PickLength from './components/PickLength.jsx';
-import PickAspect from './components/PickAspect.jsx';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       page: 'home',
-      genres: genreData
+      genres: genreData,
+      subgenres: subData,
+      showGenres: false,
+      showSubgenres: false
     }
     this.handleAboutMe = this.handleAboutMe.bind(this);
     this.handleBackHome = this.handleBackHome.bind(this);
+    this.handleGenreDropdown = this.handleGenreDropdown.bind(this);
+    this.handleSubgenreDropdown = this.handleSubgenreDropdown.bind(this);
   }
-  // functions
   handleAboutMe() {
     this.setState({
       page: 'about me'
     });
   }
-
   handleBackHome() {
     this.setState({
       page: 'home'
     });
   }
+  handleGenreDropdown() {
+    if (this.state.showGenres === false) {
+      this.setState({
+        showGenres: true
+      });
+    } else if (this.state.showGenres === true) {
+      this.setState({
+        showGenres: false
+      });
+    }
+  }
+  handleSubgenreDropdown() {
+    if (this.state.showSubgenres === false) {
+      this.setState({
+        showSubgenres: true
+      });
+    } else if (this.state.showSubgenres === true) {
+      this.setState({
+        showSubgenres: false
+      });
+    }
+  }
+
   render () {
     return (
     <Web>
@@ -38,22 +65,25 @@ class App extends React.Component {
         <Garbanzo onClick={this.handleBackHome}>laughingGarbanzo
           </Garbanzo>
       </Title>
-
-      {/* Left Side */}
       <Body>
-
         <LeftStyle>
           <AboutMe about={this.handleAboutMe}/>
-          <GenreList genres={this.state.genres}/>
+          <GenreList
+          genres={this.state.genres}
+          show={this.state.showGenres}
+          dropdown={this.handleGenreDropdown}
+          />
+          <SubList
+          subgenres={this.state.subgenres}
+          show={this.state.showSubgenres}
+          dropdown={this.handleSubgenreDropdown}
+          />
+          <div>Other hobbies</div>
         </LeftStyle>
-
-
-      {/* Conditional Right Side */}
         <RightStyle>
           {this.state.page === 'about me' ?
             <About home={this.handleBackHome}/>
           : ''}
-
           {this.state.page === 'home' ?
             <div>
               <PickPlatform />
@@ -63,9 +93,7 @@ class App extends React.Component {
             </div>
           : ''}
         </RightStyle>
-
       </Body>
-
     </Web>
     );
   }
