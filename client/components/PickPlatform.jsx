@@ -19,7 +19,6 @@ class PickPlatform extends React.Component {
 }
 
 var Platform = styled.div`
-  margin-top: 15px;
   margin-bottom: 15px;
 `;
 export default PickPlatform;

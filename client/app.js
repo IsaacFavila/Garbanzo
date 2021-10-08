@@ -18,12 +18,14 @@ class App extends React.Component {
       genres: genreData,
       subgenres: subData,
       showGenres: false,
-      showSubgenres: false
+      showSubgenres: false,
+      showAboutMe: false
     }
     this.handleAboutMe = this.handleAboutMe.bind(this);
     this.handleBackHome = this.handleBackHome.bind(this);
     this.handleGenreDropdown = this.handleGenreDropdown.bind(this);
     this.handleSubgenreDropdown = this.handleSubgenreDropdown.bind(this);
+    this.handleAboutMeDropdown = this.handleAboutMeDropdown.bind(this);
   }
   handleAboutMe() {
     this.setState({
@@ -57,6 +59,17 @@ class App extends React.Component {
       });
     }
   }
+  handleAboutMeDropdown() {
+    if (this.state.showAboutMe === false) {
+      this.setState({
+        showAboutMe: true
+      });
+    } else if (this.state.showAboutMe === true) {
+      this.setState({
+        showAboutMe: false
+      });
+    }
+  }
 
   render () {
     return (
@@ -67,7 +80,11 @@ class App extends React.Component {
       </Title>
       <Body>
         <LeftStyle>
-          <AboutMe about={this.handleAboutMe}/>
+          <AboutMe
+          about={this.handleAboutMe}
+          show={this.state.showAboutMe}
+          dropdown={this.handleAboutMeDropdown}
+          />
           <GenreList
           genres={this.state.genres}
           show={this.state.showGenres}
@@ -78,7 +95,6 @@ class App extends React.Component {
           show={this.state.showSubgenres}
           dropdown={this.handleSubgenreDropdown}
           />
-          <div>Other hobbies</div>
         </LeftStyle>
         <RightStyle>
           {this.state.page === 'about me' ?
@@ -119,9 +135,11 @@ var Body = styled.div`
 `;
 var LeftStyle = styled.div`
   width: 20%;
+  border: solid 1px;
 `;
 var RightStyle = styled.div`
   width: 80%;
+  border: solid 1px;
 `;
 
 export default App;
