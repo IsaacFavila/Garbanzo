@@ -1,7 +1,9 @@
 var showData = [
   {
     "title": 'Demon Slayer',
-    "genre": 'Action',
+    "genre": 'Anime',
+    "subgenre": 'Shounen',
+    'seasons': '1'
     'episodes': 26,
     'link':
     'img':

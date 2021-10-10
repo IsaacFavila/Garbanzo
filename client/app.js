@@ -1,14 +1,14 @@
 import React from 'react';
-import GenreList from './components/SideBar/GenreList.jsx';
-import SubList from './components/SideBar/SubList.jsx';
-import genreData from './data/genreData.js';
-import subData from './data/subData.js';
-import AboutMe from './components/SideBar/AboutMe.jsx';
-import About from './components/PageRenders/About.jsx';
 import styled from 'styled-components';
-import PickPlatform from './components/PickPlatform.jsx';
-import PickGenre from './components/PickGenre.jsx';
-import PickLength from './components/PickLength.jsx';
+import subData from './data/subData.js';
+import genreData from './data/genreData.js';
+import SubList from './components/SideBar/SubList.jsx';
+import AboutMe from './components/SideBar/AboutMe.jsx';
+import GenreList from './components/SideBar/GenreList.jsx';
+import PickGenre from './components/Questions/PickGenre.jsx';
+import About from './components/PageRenders/AboutMe/About.jsx';
+import PickLength from './components/Questions/PickLength.jsx';
+import PickPlatform from './components/Questions/PickPlatform.jsx';
 
 class App extends React.Component {
   constructor(props) {

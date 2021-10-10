@@ -21,6 +21,9 @@ var Subtext = styled.div`
   vertical-align: middle;
   margin-bottom: 15px;
   font-size:12px;
+  &:hover {
+    color: #74cc66;
+  }
 `;
 
 export default AboutMe;

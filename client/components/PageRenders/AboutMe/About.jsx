@@ -5,7 +5,7 @@ const About = (props) => (
  <div>
     <Top>
       <div>
-      I like to watch TV shows, anime, and movies. Netflix, Crunchyroll, and Hulu are my most used stream platforms. I have used Disney+, HBO Max, and Amazon Prime, but not nearly as much. As you can probably tell, my taste is all over the place. I will watch whatever I find interesting.
+      I like to watch TV shows, anime, and the occasional movie. Netflix, Crunchyroll, and Hulu are my most used streaming platforms. I have used Disney+, HBO Max, and Amazon Prime, but not nearly as much. As you can probably tell, my taste is all over the place. I will watch whatever I find interesting.
       </div>
     </Top>
     <br></br>
@@ -38,7 +38,10 @@ const About = (props) => (
     </Favorites>
    </Body>
    <Body>
-
+      <div>Favorite movies</div>
+   </Body>
+   <Body>
+      <div>Back to home</div>
    </Body>
  </div>
 );
