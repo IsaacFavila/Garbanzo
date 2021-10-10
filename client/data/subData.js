@@ -5,11 +5,11 @@ var subData =  [
   },
   {
     id: 2,
-    name: 'Shounen'
+    name: 'Seinen'
   },
   {
     id: 3,
-    name: 'Seinen'
+    name: 'Shounen'
   },
   {
     id: 4,

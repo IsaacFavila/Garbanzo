@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import SubListEntry from './SubListEntry.jsx';
 
-const SubList = ({subgenres, show, dropdown}) => (<SubStyle>{show === false ? <H onClick={dropdown}>Subgenres explained +</H>:<div><H onClick={dropdown}>Subgenres explained -</H><List>{subgenres.map((subgenre) => <SubListEntry subgenre={subgenre.name} key={subgenre.id}/>)}</List></div>}</SubStyle>)
+const SubList = (props) => (<SubStyle>{props.show === false ? <H onClick={props.dropdown}>Subgenres explained +</H>:<div><H onClick={props.dropdown}>Subgenres explained -</H><List><EntryStyle onClick={props.romance}>{props.subgenres[0].name}</EntryStyle><EntryStyle onClick={props.seinen}>{props.subgenres[1].name}</EntryStyle><EntryStyle onClick={props.shounen}>{props.subgenres[2].name}</EntryStyle><EntryStyle onClick={props.thriller}>{props.subgenres[3].name}</EntryStyle><EntryStyle onClick={props.other}>{props.subgenres[4].name}</EntryStyle></List></div>}</SubStyle>)
 
 var H = styled.div`
   text-align: center;
@@ -12,7 +11,16 @@ var H = styled.div`
 `;
 
 var SubStyle = styled.div`
-border-bottom: solid 1px;
+  border: solid 1px;
+`;
+
+var EntryStyle = styled.div`
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 12px;
+  &:hover {
+    color: #74cc66;
+  }
 `;
 
 var List = styled.div`

@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const About = (props) => (
+const About = ({home}) => (
  <div>
     <Top>
       <div>
-      I like to watch TV shows, anime, and the occasional movie. Netflix, Crunchyroll, and Hulu are my most used streaming platforms. I have used Disney+, HBO Max, and Amazon Prime, but not nearly as much. As you can probably tell, my taste is all over the place. I will watch whatever I find interesting.
+      I like to watch TV shows, anime, and the occasional movie. Netflix, Crunchyroll, and Hulu are my most used streaming platforms. I have used Disney+, HBO Max, and Amazon Prime, but not nearly as much. I am not that picky, and will watch whatever I find interesting.
       </div>
     </Top>
     <br></br>
@@ -16,32 +16,32 @@ const About = (props) => (
       <Crunchyroll>Crunchyroll</Crunchyroll>
       <Hulu>Hulu</Hulu>
     </Services>
-    <Current><u>Currently Watching</u>
-      <div>The Witcher</div>
-      <div>One Piece</div>
-      <div>-</div>
-    </Current>
-    <Current><u>Plan to watch</u>
-      <div>Squid Game</div>
-      <div>-</div>
-      <div>-</div>
-    </Current>
-    <Recent><u>Recently Completed</u>
-      <div>-</div>
-      <div>-</div>
-      <div>Are You the One S4 </div>
-    </Recent>
     <Favorites><u>Favorites</u>
       <div>Queen's Gambit</div>
       <div>Steins Gate</div>
       <div>Brooklyn Nine-Nine</div>
     </Favorites>
-   </Body>
+    <Current><u>Currently Watching</u>
+      <div>The Witcher</div>
+      <div>One Piece</div>
+      <div>-</div>
+    </Current>
+    <Recent><u>Recently Completed</u>
+      <div>Lucifer</div>
+      <div>My Hero S5</div>
+      <div>Are You the One S4 </div>
+    </Recent>
+    <PTW><u>Plan to watch</u>
+      <div>Squid Game</div>
+      <div>Demon Slayer S2</div>
+      <div>-</div>
+    </PTW>
+   </Body><br></br>
    <Body>
       <div>Favorite movies</div>
-   </Body>
+   </Body><br></br>
    <Body>
-      <div>Back to home</div>
+      <div onClick={home}>Back to home</div>
    </Body>
  </div>
 );
@@ -69,6 +69,7 @@ var Hulu = styled.div`
 var Current = styled.div``;
 var Recent = styled.div``;
 var Favorites = styled.div``;
+var PTW = styled.div``;
 
 
 export default About;
