@@ -2,10 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import subData from './data/subData.js';
 import genreData from './data/genreData.js';
-import SubList from './components/SideBar/SubList.jsx';
 import AboutMe from './components/SideBar/AboutMe.jsx';
 import GenreList from './components/SideBar/GenreList.jsx';
-import PickGenre from './components/Questions/PickGenre.jsx';
+import SubList from './components/SideBar/SubList.jsx';
 import About from './components/PageRenders/AboutMe/About.jsx';
 import Hobbies from './components/PageRenders/AboutMe/OtherHobbies.jsx';
 import Action from './components/PageRenders/Genres/Action.jsx';
@@ -19,8 +18,9 @@ import Seinen from './components/PageRenders/Subgenres/Seinen.jsx';
 import Shounen from './components/PageRenders/Subgenres/Shounen.jsx';
 import Thriller from './components/PageRenders/Subgenres/Thriller.jsx';
 import Other from './components/PageRenders/Subgenres/Other.jsx';
+import PickGenre from './components/Questions/PickGenre.jsx';
+// import PickSubGenre from './components/Questions'
 import PickLength from './components/Questions/PickLength.jsx';
-import PickPlatform from './components/Questions/PickPlatform.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -32,7 +32,7 @@ class App extends React.Component {
       showGenres: false,
       showSubgenres: false,
       showAboutMe: false,
-      platform: '',
+      platform: null,
       genrePreferece: '',
       subgenrePreference: '',
       length: ''
@@ -54,6 +54,9 @@ class App extends React.Component {
     this.handleGenreDropdown = this.handleGenreDropdown.bind(this);
     this.handleSubgenreDropdown = this.handleSubgenreDropdown.bind(this);
     this.handleAboutMeDropdown = this.handleAboutMeDropdown.bind(this);
+    this.handlePlatformSelect = this.handlePlatformSelect.bind(this);
+    this.handleGenreSelect = this.handleGenreSelect.bind(this);
+    this.handleSubgenreSelect = this.handleSubgenreSelect.bind(this);
   }
   handleAboutMe() {
     this.setState({
@@ -158,97 +161,31 @@ class App extends React.Component {
       });
     }
   }
+  handlePlatformSelect(event) {
+    this.setState({
+      platform: event.target.value
+    })
+  }
+  handleGenreSelect(event) {
+    this.setState({
+      genrePreferece: event.target.value
+    })
+  }
+  handleSubgenreSelect(event) {
+    this.setState({
+      subgenrePreferece: event.target.value
+    })
+  }
 
   render () {
-    return (
-    <Web>
-      <Title>
-        <Garbanzo onClick={this.handleBackHome}>laughingGarbanzo
-          </Garbanzo>
-      </Title>
-      <Body>
-        <LeftStyle>
-          <AboutMe
-          about={this.handleAboutMe}
-          hobby={this.handleHobby}
-          show={this.state.showAboutMe}
-          dropdown={this.handleAboutMeDropdown}
-          />
-          <GenreList
-          genres={this.state.genres}
-          show={this.state.showGenres}
-          dropdown={this.handleGenreDropdown}
-          action={this.handleAction}
-          anime={this.handleAnime}
-          comedy={this.handleComedy}
-          crime={this.handleCrime}
-          drama={this.handleDrama}
-          reality={this.handleReality}
-          />
-          <SubList
-          subgenres={this.state.subgenres}
-          show={this.state.showSubgenres}
-          dropdown={this.handleSubgenreDropdown}
-          romance={this.handleRomance}
-          seinen={this.handleSeinen}
-          shounen={this.handleShounen}
-          thriller={this.handleThriller}
-          other={this.handleOther}
-          />
-        </LeftStyle>
-        <RightStyle>
-          {this.state.page === 'about me' ?
-            <About home={this.handleBackHome}/>
-          : ''}
-          {this.state.page === 'hobby' ?
-            <Hobbies home={this.handleBackHome}/>
-          : ''}
-          {this.state.page === 'action' ?
-            <Action home={this.handleBackHome}/>
-          : ''}
-          {this.state.page === 'anime' ?
-            <Anime home={this.handleBackHome}/>
-          : ''}
-          {this.state.page === 'comedy' ?
-            <Comedy home={this.handleBackHome}/>
-          : ''}
-          {this.state.page === 'crime' ?
-            <Crime home={this.handleBackHome}/>
-          : ''}
-          {this.state.page === 'drama' ?
-            <Drama home={this.handleBackHome}/>
-          : ''}
-          {this.state.page === 'reality' ?
-            <Reality home={this.handleBackHome}/>
-          : ''}
-          {this.state.page === 'romance' ?
-            <Romance home={this.handleBackHome}/>
-          : ''}
-          {this.state.page === 'seinen' ?
-            <Seinen home={this.handleBackHome}/>
-          : ''}
-          {this.state.page === 'shounen' ?
-            <Shounen home={this.handleBackHome}/>
-          : ''}
-          {this.state.page === 'thriller' ?
-            <Thriller home={this.handleBackHome}/>
-          : ''}
-          {this.state.page === 'other' ?
-            <Other home={this.handleBackHome}/>
-          : ''}
-          {this.state.page === 'home' ?
-            <div>
-              <PickPlatform />
-              <PickGenre genres={this.state.genres}/>
-              <PickLength />
-              <button>Get recommendation</button>
-            </div>
-          : ''}
-        </RightStyle>
-      </Body>
-    </Web>
-    );
-  }
+    return (<Web><Title><Garbanzo onClick={this.handleBackHome}>laughingGarbanzo</Garbanzo></Title><Body><LeftStyle><AboutMe about={this.handleAboutMe}hobby={this.handleHobby}show={this.state.showAboutMe}dropdown={this.handleAboutMeDropdown}/><GenreList genres={this.state.genres}show={this.state.showGenres}dropdown={this.handleGenreDropdown}action={this.handleAction}anime={this.handleAnime}comedy={this.handleComedy}crime={this.handleCrime}drama={this.handleDrama}reality={this.handleReality}/><SubList subgenres={this.state.subgenres}show={this.state.showSubgenres}dropdown={this.handleSubgenreDropdown}romance={this.handleRomance}seinen={this.handleSeinen}shounen={this.handleShounen}thriller={this.handleThriller}other={this.handleOther}/></LeftStyle><RightStyle>{this.state.page==='about me'?<About home={this.handleBackHome}/>:''}{this.state.page==='hobby'?<Hobbies home={this.handleBackHome}/>:''}{this.state.page==='action'?<Action home={this.handleBackHome}/>:''}{this.state.page==='anime'?<Anime home={this.handleBackHome}/>:''}{this.state.page==='comedy'?<Comedy home={this.handleBackHome}/>:''}{this.state.page==='crime'?<Crime home={this.handleBackHome}/>:''}{this.state.page==='drama'?<Drama home={this.handleBackHome}/>:''}{this.state.page==='reality'?<Reality home={this.handleBackHome}/>:''}{this.state.page==='romance'?<Romance home={this.handleBackHome}/>:''}{this.state.page==='seinen'?<Seinen home={this.handleBackHome}/>:''}{this.state.page==='shounen'?<Shounen home={this.handleBackHome}/>:''}{this.state.page==='thriller'?<Thriller home={this.handleBackHome}/>:''}{this.state.page==='other'?<Other home={this.handleBackHome}/>:''}{this.state.page==='home'?<div><Platform onChange={this.handlePlatformSelect}>What streaming platform would you like to use?<br></br><input type='radio' name='platform' value='netflix' />Netflix<input type='radio' name='platform' value='hulu'/>Hulu<input type='radio' name='platform' value='crunchyroll'/>Crunchyroll</Platform>{this.state.platform === 'netflix' || this.state.platform === 'hulu' ?<PickGenreStyle onChange={this.handleGenreSelect}>What genre do you prefer? <br></br><input type='radio' name='genre' value='action'/>{this.state.genres[0].name}<input type='radio' name='genre' value='anime'/>{this.state.genres[1].name}<input type='radio' name='genre' value='comedy'/>{this.state.genres[2].name}<input type='radio' name='genre' value='crime'/>{this.state.genres[3].name}<input type='radio' name='genre' value='drama'/>{this.state.genres[4].name}<input type='radio' name='genre' value='reality'/>{this.state.genres[5].name}</PickGenreStyle>:''}{this.state.platform === 'crunchyroll' || this.state.genrePreferece === 'anime' ? <PickGenreStyle onChange={this.handleSubgenreSelect}>What subgenre do you prefer? <br></br><input type='radio' name='sub' value='romance'/>{this.state.subgenres[0].name}<input type='radio' name='sub' value='seinen'/>{this.state.subgenres[1].name}<input type='radio' name='sub' value='shounen'/>{this.state.subgenres[2].name}<input type='radio' name='sub' value='thriller'/>{this.state.subgenres[3].name}<input type='radio' name='sub' value='other'/>{this.state.subgenres[4].name}</PickGenreStyle>:''}
+
+
+
+            <PickLength />
+            <button>Get recommendation</button>
+          </div>
+        : ''}</RightStyle></Body></Web>);}
 }
 
 var Web = styled.div`
@@ -278,6 +215,13 @@ var RightStyle = styled.div`
   margin-left: 15px;
   margin-top: 15px;
   margin-right: 15px;
+`;
+var Platform = styled.div`
+  margin-bottom: 15px;
+`;
+var PickGenreStyle = styled.div`
+  margin-top: 15px;
+  margin-bottom: 15px;
 `;
 
 export default App;

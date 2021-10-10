@@ -8,10 +8,10 @@ class PickPlatform extends React.Component {
 
   render () {
     return (
-      <Platform>What streaming platform(s) do you have? (Select all that apply)<br></br>
-        <input type='checkbox'/>Netflix
-        <input type='checkbox'/>Hulu
-        <input type='checkbox'/>Crunchyroll
+      <Platform>What streaming platform would you like to use?<br></br>
+        <input type='radio'/>Netflix
+        <input type='radio'/>Hulu
+        <input type='radio'/>Crunchyroll
       </Platform>
 
     );
