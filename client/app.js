@@ -19,7 +19,11 @@ class App extends React.Component {
       subgenres: subData,
       showGenres: false,
       showSubgenres: false,
-      showAboutMe: false
+      showAboutMe: false,
+      platform: '',
+      genrePreferece: '',
+      subgenrePreference: '',
+      length: ''
     }
     this.handleAboutMe = this.handleAboutMe.bind(this);
     this.handleBackHome = this.handleBackHome.bind(this);
@@ -118,6 +122,7 @@ class App extends React.Component {
 var Web = styled.div`
   height: 100vh;
   color: #d4b5a9;
+  font-family: Arial, sans-serif;
 `;
 var Title = styled.div`
   font-size: 36px;
@@ -132,14 +137,17 @@ var Body = styled.div`
   height: 100%;
   margin: 0;
   min-height: 100%;
+  border: solid 1px;
 `;
 var LeftStyle = styled.div`
   width: 20%;
-  border: solid 1px;
+  border-right: solid 1px;
 `;
 var RightStyle = styled.div`
   width: 80%;
-  border: solid 1px;
+  margin-left: 15px;
+  margin-top: 15px;
+  margin-right: 15px;
 `;
 
 export default App;

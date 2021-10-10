@@ -21,9 +21,14 @@ const About = (props) => (
       <div>One Piece</div>
       <div>-</div>
     </Current>
-    <Recent><u>Recently Completed</u>
+    <Current><u>Plan to watch</u>
       <div>Squid Game</div>
-      <div>Tokyo Revengers</div>
+      <div>-</div>
+      <div>-</div>
+    </Current>
+    <Recent><u>Recently Completed</u>
+      <div>-</div>
+      <div>-</div>
       <div>Are You the One S4 </div>
     </Recent>
     <Favorites><u>Favorites</u>
@@ -31,6 +36,9 @@ const About = (props) => (
       <div>Steins Gate</div>
       <div>Brooklyn Nine-Nine</div>
     </Favorites>
+   </Body>
+   <Body>
+
    </Body>
  </div>
 );

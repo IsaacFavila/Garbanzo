@@ -17,13 +17,9 @@ class PickLength extends React.Component {
   render () {
     return (
       <PickLengthStyle>Would you like to a shorter or longer series? <br></br>
-        <input type='radio' name='length'/>Shorter
-        <input type='radio' name='length'/>In the middle
-        <input type='radio' name='length'/>Longer
-        {/* <input type='radio' name='length'/>Short (11-27 eps)
-        <input type='radio' name='length'/>Intermediate (26-75 eps)
-        <input type='radio' name='length'/>Long (75+ eps)
-        <input type='radio' name='length'/>No preference */}
+        <input type='radio' name='length'/>Short
+        <input type='radio' name='length'/>Intermediate
+        <input type='radio' name='length'/>Long
       </PickLengthStyle>
 
     );
