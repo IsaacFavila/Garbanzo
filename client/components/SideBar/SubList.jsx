@@ -8,6 +8,9 @@ var H = styled.div`
   cursor: pointer;
   margin-bottom: 15px;
   margin-top: 15px;
+  &:hover {
+    color: #74cc66;
+  }
 `;
 
 var SubStyle = styled.div`

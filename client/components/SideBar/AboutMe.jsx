@@ -15,6 +15,9 @@ var Text = styled.div`
   vertical-align: middle;
   margin-top:15px;
   margin-bottom: 15px;
+  &:hover {
+    color: #74cc66;
+  }
 `;
 var Subtext = styled.div`
   cursor: pointer;
