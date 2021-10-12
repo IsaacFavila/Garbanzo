@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const SubList = (props) => (<SubStyle>{props.show === false ? <H onClick={props.dropdown}>Subgenres explained +</H>:<div><H onClick={props.dropdown}>Subgenres explained -</H><List><EntryStyle onClick={props.romance}>{props.subgenres[0].name}</EntryStyle><EntryStyle onClick={props.seinen}>{props.subgenres[1].name}</EntryStyle><EntryStyle onClick={props.shounen}>{props.subgenres[2].name}</EntryStyle><EntryStyle onClick={props.thriller}>{props.subgenres[3].name}</EntryStyle><EntryStyle onClick={props.other}>{props.subgenres[4].name}</EntryStyle></List></div>}</SubStyle>)
+const SubList = (props) => (<SubStyle>{props.show === false ? <H onClick={props.dropdown}>Subgenres explained +</H>:<div><H onClick={props.dropdown}>Subgenres explained -</H><List><EntryStyle onClick={props.romance}>{props.subgenres[0].subgenre}</EntryStyle><EntryStyle onClick={props.seinen}>{props.subgenres[1].subgenre}</EntryStyle><EntryStyle onClick={props.shounen}>{props.subgenres[2].subgenre}</EntryStyle><EntryStyle onClick={props.other}>{props.subgenres[3].subgenre}</EntryStyle><EntryStyle onClick={props.thriller}>{props.subgenres[4].subgenre}</EntryStyle></List></div>}</SubStyle>)
 
 var H = styled.div`
   text-align: center;

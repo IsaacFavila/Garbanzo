@@ -22,13 +22,40 @@ pool.connect(err => {
   if (err) {
   console.error('connection error', err.stack);
   } else {
-    console.log('connected to databse');
+    console.log('connected to database');
   }
 });
 
-
 app.get('/credentials', (req, res) => {
   pool.query('select * from credentials')
+    .then(({rows}) => {
+      res.status(200).send(rows)
+    })
+    .catch(err => {
+      res.status(500).send(err);
+    })
+})
+
+app.get('/favorites', (req, res) => {
+  pool.query('select * from shows where favorite = true')
+    .then(({rows}) => {
+      res.status(200).send(rows)
+    })
+    .catch(err => {
+      res.status(500).send(err);
+    })
+})
+app.get('/genres', (req, res) => {
+  pool.query('select distinct genre from shows order by genre ASC')
+    .then(({rows}) => {
+      res.status(200).send(rows)
+    })
+    .catch(err => {
+      res.status(500).send(err);
+    })
+})
+app.get('/subgenres', (req, res) => {
+  pool.query('select distinct subgenre from shows where subgenre is not null order by subgenre ASC')
     .then(({rows}) => {
       res.status(200).send(rows)
     })

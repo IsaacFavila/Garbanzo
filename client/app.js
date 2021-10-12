@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import subData from './data/subData.js';
-import genreData from './data/genreData.js';
+
 import AboutMe from './components/SideBar/AboutMe.jsx';
 import GenreList from './components/SideBar/GenreList.jsx';
 import SubList from './components/SideBar/SubList.jsx';
@@ -25,8 +24,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       page: 'home',
-      genres: genreData,
-      subgenres: subData,
+      genres: [],
+      subgenres: [],
       showGenres: false,
       showSubgenres: false,
       showAboutMe: false,
@@ -35,7 +34,8 @@ class App extends React.Component {
       subgenrePreference: null,
       length: null,
       search: {},
-      credentials: []
+      credentials: [],
+      favorites: []
     }
     this.handleAboutMe = this.handleAboutMe.bind(this);
     this.handleHobby = this.handleHobby.bind(this);
@@ -60,9 +60,15 @@ class App extends React.Component {
     this.handleLengthSelect = this.handleLengthSelect.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.getCredentials = this.getCredentials.bind(this);
+    this.getFavorites = this.getFavorites.bind(this);
+    this.getGenres = this.getGenres.bind(this);
+    this.getSubgenres = this.getSubgenres.bind(this);
   }
   componentDidMount() {
     this.getCredentials();
+    this.getFavorites();
+    this.getGenres();
+    this.getSubgenres();
   }
   handleAboutMe() {
     this.setState({
@@ -206,6 +212,39 @@ class App extends React.Component {
       .then(({data}) => {
         this.setState({
           credentials: data
+        })
+      })
+      .catch(err => {
+        console.log(err);
+      })
+  }
+  getFavorites() {
+    axios.get('/favorites')
+      .then(({data}) => {
+        this.setState({
+          favorites: data
+        })
+      })
+      .catch(err => {
+        console.log(err);
+      })
+  }
+  getGenres() {
+    axios.get('/genres')
+      .then(({data}) => {
+        this.setState({
+          genres: data
+        })
+      })
+      .catch(err => {
+        console.log(err);
+      })
+  }
+  getSubgenres() {
+    axios.get('/subgenres')
+      .then(({data}) => {
+        this.setState({
+          subgenres: data
         })
       })
       .catch(err => {
