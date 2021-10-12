@@ -1,13 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-
 import AboutMe from './components/SideBar/AboutMe.jsx';
 import GenreList from './components/SideBar/GenreList.jsx';
 import SubList from './components/SideBar/SubList.jsx';
 import About from './components/PageRenders/AboutMe/About.jsx';
 import Hobbies from './components/PageRenders/AboutMe/OtherHobbies.jsx';
 import Action from './components/PageRenders/Genres/Action.jsx';
-import Anime from './components/PageRenders/Genres/Anime.jsx';
 import Comedy from './components/PageRenders/Genres/Comedy.jsx';
 import Crime from './components/PageRenders/Genres/Crime.jsx';
 import Drama from './components/PageRenders/Genres/Drama.jsx';
@@ -41,7 +39,6 @@ class App extends React.Component {
     this.handleAboutMe = this.handleAboutMe.bind(this);
     this.handleHobby = this.handleHobby.bind(this);
     this.handleAction = this.handleAction.bind(this);
-    this.handleAnime = this.handleAnime.bind(this);
     this.handleComedy = this.handleComedy.bind(this);
     this.handleCrime = this.handleCrime.bind(this);
     this.handleDrama = this.handleDrama.bind(this);
@@ -86,11 +83,6 @@ class App extends React.Component {
   handleAction() {
     this.setState({
       page: 'action'
-    });
-  }
-  handleAnime() {
-    this.setState({
-      page: 'anime'
     });
   }
   handleComedy() {
