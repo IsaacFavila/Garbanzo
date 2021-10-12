@@ -7,11 +7,6 @@ const About = ({home, shows}) => (
     <div>
     I like to watch TV shows, anime, and the occasional movie. Netflix, Crunchyroll, and Hulu are my most used streaming platforms. I have used Disney+, HBO Max, and Amazon Prime, but not nearly as much. I am not that picky, and will watch whatever I find interesting.
     </div>
-    <MAL>
-      <Text href='https://myanimelist.net/profile/bumfavbumbum' target='_blank' rel="noopener noreferrer">MyAnimeList Profile</Text>
-      <Bar>|</Bar>
-      <Text href='https://anime.plus/bumfavbumbum/ratings,anime' target='_blank' rel="noopener noreferrer">Rating Breakdown</Text>
-    </MAL>
     <Flex>
       <div>
         <h3>Platform</h3>
@@ -46,31 +41,17 @@ const About = ({home, shows}) => (
  </div>
 );
 
-
 var Flex = styled.div`
   display: flex;
   justify-content: space-between;
 `;
-
-var MAL = styled.div`
-  display: flex;
-  justify-content: flex-end;
-`;
-
 var Center = styled.div`
   justify-content: center;
   text-align: center;
 `;
-
 var Body = styled.div`
   display: flex;
 `;
-var Bar = styled.div`
-font-size: 12px;
-  margin-right: 5px;
-  margin-left: 5px;
-`;
-
 var Crunchyroll = styled.div`
   color: orange;
   margin-bottom: 15px;
@@ -83,11 +64,5 @@ var Hulu = styled.div`
   color: green;
   margin-bottom: 15px;
 `;
-var Text = styled.a`
-  font-size: 12px;
-  color: #d4b5a9;
-  &:hover {
-    color: #74cc66;
-  }
-`;
+
 export default About;

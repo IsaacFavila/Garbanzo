@@ -3,10 +3,33 @@ import styled from 'styled-components';
 
 const Hobbies = ({home}) => (
   <div>
-  <div>Every once in a blue moon I will upload a youtube video. Here is my latest video.</div>
-  <iframe width="572" height="400" src="https://www.youtube.com/embed/v29OGudJ7cg?autoplay=1&start=35&mute=1" frameborder="0" allowfullscreen></iframe><br></br>
-  <button onClick={home}>Back to home</button>
+    <Header>MAL</Header>
+    <div>If you are curious, here is my other anime related information.</div>
+    <ul>
+    <li>
+    <Text href='https://myanimelist.net/profile/bumfavbumbum' target='_blank' rel="noopener noreferrer">MyAnimeList Profile</Text>
+    </li>
+    <li>
+    <Text href='https://anime.plus/bumfavbumbum/ratings,anime' target='_blank' rel="noopener noreferrer">Rating Breakdown</Text>
+    </li>
+    <li>
+    <Text href='https://open.spotify.com/playlist/4qL0QsTVoR9BMtCRtbV4I9?si=7346fb31a19d4759' target='_blank' rel="noopener noreferrer">Spotify Playlist</Text>
+    </li>
+    </ul>
+    <br></br>
+    <button onClick={home}>Back to home</button>
   </div>
 );
 
+var Text = styled.a`
+  color: #d4b5a9;
+  margin-bottom: 15px;
+  &:hover {
+    color: #74cc66;
+  }
+`;
+
+var Header = styled.h3`
+  margin-top: -2px;
+`;
 export default Hobbies;
