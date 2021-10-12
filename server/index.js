@@ -35,8 +35,17 @@ app.get('/credentials', (req, res) => {
       res.status(500).send(err);
     })
 })
-app.get('/favorites', (req, res) => {
-  pool.query('select * from shows where favorite = true order by genre ASC, subgenre, name ASC')
+app.get('/genreFavorites', (req, res) => {
+  pool.query(`select * from shows where genre != 'Anime' and favorite = true order by genre ASC`)
+    .then(({rows}) => {
+      res.status(200).send(rows)
+    })
+    .catch(err => {
+      res.status(500).send(err);
+    })
+})
+app.get('/subgenreFavorites', (req, res) => {
+  pool.query(`select * from shows where genre = 'Anime' and favorite = true order by subgenre ASC`)
     .then(({rows}) => {
       res.status(200).send(rows)
     })
@@ -45,7 +54,7 @@ app.get('/favorites', (req, res) => {
     })
 })
 app.get('/genres', (req, res) => {
-  pool.query('select distinct genre from shows order by genre ASC')
+  pool.query(`select distinct genre from shows where genre != 'Anime' order by genre ASC`)
     .then(({rows}) => {
       res.status(200).send(rows)
     })

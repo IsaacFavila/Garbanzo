@@ -35,7 +35,8 @@ class App extends React.Component {
       length: null,
       search: {},
       credentials: [],
-      favorites: []
+      genreFavorites: [],
+      subgenreFavorites: []
     }
     this.handleAboutMe = this.handleAboutMe.bind(this);
     this.handleHobby = this.handleHobby.bind(this);
@@ -60,7 +61,8 @@ class App extends React.Component {
     this.handleLengthSelect = this.handleLengthSelect.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.getCredentials = this.getCredentials.bind(this);
-    this.getFavorites = this.getFavorites.bind(this);
+    this.getGenreFavorites = this.getGenreFavorites.bind(this);
+    this.getSubgenreFavorites = this.getSubgenreFavorites.bind(this);
     this.getGenres = this.getGenres.bind(this);
     this.getSubgenres = this.getSubgenres.bind(this);
   }
@@ -68,7 +70,8 @@ class App extends React.Component {
     this.getGenres();
     this.getSubgenres();
     this.getCredentials();
-    this.getFavorites();
+    this.getGenreFavorites();
+    this.getSubgenreFavorites();
   }
   handleAboutMe() {
     this.setState({
@@ -218,11 +221,22 @@ class App extends React.Component {
         console.log(err);
       })
   }
-  getFavorites() {
-    axios.get('/favorites')
+  getGenreFavorites() {
+    axios.get('/genreFavorites')
       .then(({data}) => {
         this.setState({
-          favorites: data
+          genreFavorites: data
+        })
+      })
+      .catch(err => {
+        console.log(err);
+      })
+  }
+  getSubgenreFavorites() {
+    axios.get('/subgenreFavorites')
+      .then(({data}) => {
+        this.setState({
+          subgenreFavorites: data
         })
       })
       .catch(err => {
@@ -253,30 +267,7 @@ class App extends React.Component {
   }
 
   render () {
-    return (<Web><Title onClick={this.handleBackHome}>laughingGarbanzo</Title><Body><LeftStyle><AboutMe about={this.handleAboutMe}hobby={this.handleHobby}show={this.state.showAboutMe}dropdown={this.handleAboutMeDropdown}/><GenreList genres={this.state.genres}show={this.state.showGenres}dropdown={this.handleGenreDropdown}action={this.handleAction}anime={this.handleAnime}comedy={this.handleComedy}crime={this.handleCrime}drama={this.handleDrama}reality={this.handleReality}/><SubList subgenres={this.state.subgenres}show={this.state.showSubgenres}dropdown={this.handleSubgenreDropdown}romance={this.handleRomance}seinen={this.handleSeinen}shounen={this.handleShounen}thriller={this.handleThriller}other={this.handleOther}/></LeftStyle><RightStyle>{this.state.page==='about me'?<About home={this.handleBackHome} shows={this.state.credentials}/>:''}{this.state.page==='hobby'?<Hobbies home={this.handleBackHome}/>:''}
-
-    {this.state.page==='action'?<Action home={this.handleBackHome} shows={this.state.favorites.slice(0,2)}/>:''}
-
-
-    {this.state.page==='anime'?<Anime home={this.handleBackHome}/>:''}
-
-    {this.state.page==='comedy'?<Comedy home={this.handleBackHome} shows={this.state.favorites.slice(17,19)}/>:''}
-
-    {this.state.page==='crime'?<Crime home={this.handleBackHome} shows={this.state.favorites.slice(19,21)}/>:''}
-    {this.state.page==='drama'?<Drama home={this.handleBackHome} shows={this.state.favorites.slice(21,23)}/>:''}
-    {this.state.page==='reality'?<Reality home={this.handleBackHome} shows={this.state.favorites.slice(23)}/>:''}
-
-
-
-    {this.state.page==='romance'?<Romance home={this.handleBackHome}/>:''}
-    {this.state.page==='seinen'?<Seinen home={this.handleBackHome}/>:''}
-    {this.state.page==='shounen'?<Shounen home={this.handleBackHome}/>:''}
-    {this.state.page==='other'?<Other home={this.handleBackHome}/>:''}
-    {this.state.page==='thriller'?<Thriller home={this.handleBackHome}/>:''}
-
-
-
-    {this.state.page==='home'?<div><Platform onChange={this.handlePlatformSelect}>What streaming platform would you like to use?<br></br><input type='radio' name='platform' value='netflix'/>Netflix<input type='radio' name='platform' value='hulu'/>Hulu<input type='radio' name='platform' value='crunchyroll'/>Crunchyroll</Platform>{this.state.platform === 'netflix' || this.state.platform === 'hulu' ?<PickStyle onChange={this.handleGenreSelect}>What genre do you prefer? <br></br><input type='radio' name='genre' value='action'/>{this.state.genres[0].name}<input type='radio' name='genre' value='anime'/>{this.state.genres[1].name}<input type='radio' name='genre' value='comedy'/>{this.state.genres[2].name}<input type='radio' name='genre' value='crime'/>{this.state.genres[3].name}<input type='radio' name='genre' value='drama'/>{this.state.genres[4].name}<input type='radio' name='genre' value='reality'/>{this.state.genres[5].name}</PickStyle>:''}{this.state.platform === 'crunchyroll' || this.state.genrePreferece === 'anime' ? <PickStyle onChange={this.handleSubgenreSelect}>What subgenre do you prefer? <br></br><input type='radio' name='sub' value='romance'/>{this.state.subgenres[0].name}<input type='radio' name='sub' value='seinen'/>{this.state.subgenres[1].name}<input type='radio' name='sub' value='shounen'/>{this.state.subgenres[2].name}<input type='radio' name='sub' value='thriller'/>{this.state.subgenres[3].name}<input type='radio' name='sub' value='other'/>{this.state.subgenres[4].name}</PickStyle>:''}<PickStyle onChange={this.handleLengthSelect}>Would you like a shorter or longer series? <br></br><input type='radio' name='length' value='short'/>Short<input type='radio' name='length'value='intermediate'/>Intermediate<input type='radio' name='length' value='long'/>Long</PickStyle><button onClick={this.handleSubmit}>Get recommendation</button></div>:''}</RightStyle></Body></Web>);}
+    return (<Web><Title onClick={this.handleBackHome}>laughingGarbanzo</Title><Body><LeftStyle><AboutMe about={this.handleAboutMe}hobby={this.handleHobby}show={this.state.showAboutMe}dropdown={this.handleAboutMeDropdown}/><GenreList genres={this.state.genres}show={this.state.showGenres}dropdown={this.handleGenreDropdown}action={this.handleAction}anime={this.handleAnime}comedy={this.handleComedy}crime={this.handleCrime}drama={this.handleDrama}reality={this.handleReality}/><SubList subgenres={this.state.subgenres}show={this.state.showSubgenres}dropdown={this.handleSubgenreDropdown}romance={this.handleRomance}seinen={this.handleSeinen}shounen={this.handleShounen}thriller={this.handleThriller}other={this.handleOther}/></LeftStyle><RightStyle>{this.state.page==='about me'?<About home={this.handleBackHome} shows={this.state.credentials}/>:''}{this.state.page==='hobby'?<Hobbies home={this.handleBackHome}/>:''}{this.state.page==='action'?<Action home={this.handleBackHome} shows={this.state.genreFavorites.slice(0,2)}/>:''}{this.state.page==='comedy'?<Comedy home={this.handleBackHome} shows={this.state.genreFavorites.slice(2,4)}/>:''}{this.state.page==='crime'?<Crime home={this.handleBackHome} shows={this.state.genreFavorites.slice(4,6)}/>:''}{this.state.page==='drama'?<Drama home={this.handleBackHome} shows={this.state.genreFavorites.slice(6,8)}/>:''}{this.state.page==='reality'?<Reality home={this.handleBackHome} shows={this.state.genreFavorites.slice(8)}/>:''}{this.state.page==='romance'?<Romance home={this.handleBackHome} shows={this.state.subgenreFavorites.slice(0,3)}/>:''}{this.state.page==='seinen'?<Seinen home={this.handleBackHome} shows={this.state.subgenreFavorites.slice(3,6)}/>:''}{this.state.page==='shounen'?<Shounen home={this.handleBackHome} shows={this.state.subgenreFavorites.slice(6,9)}/>:''}{this.state.page==='other'?<Other home={this.handleBackHome} shows={this.state.subgenreFavorites.slice(9,12)}/>:''}{this.state.page==='thriller'?<Thriller home={this.handleBackHome} shows={this.state.subgenreFavorites.slice(12)}/>:''}{this.state.page==='home'?<div><Platform onChange={this.handlePlatformSelect}>What streaming platform would you like to use?<br></br><input type='radio' name='platform' value='netflix'/>Netflix<input type='radio' name='platform' value='hulu'/>Hulu<input type='radio' name='platform' value='crunchyroll'/>Crunchyroll</Platform>{this.state.platform === 'netflix' || this.state.platform === 'hulu' ?<PickStyle onChange={this.handleGenreSelect}>What genre do you prefer? <br></br><input type='radio' name='genre' value='action'/>{this.state.genres[0].name}<input type='radio' name='genre' value='anime'/>{this.state.genres[1].name}<input type='radio' name='genre' value='comedy'/>{this.state.genres[2].name}<input type='radio' name='genre' value='crime'/>{this.state.genres[3].name}<input type='radio' name='genre' value='drama'/>{this.state.genres[4].name}<input type='radio' name='genre' value='reality'/>{this.state.genres[5].name}</PickStyle>:''}{this.state.platform === 'crunchyroll' || this.state.genrePreferece === 'anime' ? <PickStyle onChange={this.handleSubgenreSelect}>What subgenre do you prefer? <br></br><input type='radio' name='sub' value='romance'/>{this.state.subgenres[0].name}<input type='radio' name='sub' value='seinen'/>{this.state.subgenres[1].name}<input type='radio' name='sub' value='shounen'/>{this.state.subgenres[2].name}<input type='radio' name='sub' value='thriller'/>{this.state.subgenres[3].name}<input type='radio' name='sub' value='other'/>{this.state.subgenres[4].name}</PickStyle>:''}<PickStyle onChange={this.handleLengthSelect}>Would you like a shorter or longer series? <br></br><input type='radio' name='length' value='short'/>Short<input type='radio' name='length'value='intermediate'/>Intermediate<input type='radio' name='length' value='long'/>Long</PickStyle><button onClick={this.handleSubmit}>Get recommendation</button></div>:''}</RightStyle></Body></Web>);}
 }
 
 var Web = styled.div`

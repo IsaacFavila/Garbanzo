@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Shounen = ({home}) => (
-  <div>Shounen
-    <div onClick={home}>Back to home</div>
+const Shounen = ({home, shows}) => (
+  <div>
+    <h3>Shounen</h3>
+    {shows.map((show) => <a key={show.id}>{show.name}</a>)}<br></br>
+    <button onClick={home}>Back to home</button>
   </div>
 );
 
