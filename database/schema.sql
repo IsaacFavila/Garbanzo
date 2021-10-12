@@ -20,8 +20,6 @@ CREATE TABLE shows (
   episodes INTEGER NULL DEFAULT NULL,
   platform VARCHAR NULL DEFAULT NULL,
   favorite BOOLEAN,
-  image VARCHAR NULL DEFAULT NULL,
-  link VARCHAR NULL DEFAULT NULL,
   PRIMARY KEY (id)
 );
 
@@ -39,6 +37,8 @@ CREATE TABLE credentials (
 
 
 \COPY credentials FROM /Users/isaacmfavila/Downloads/credentials.csv DELIMITER ',' CSV HEADER;
+
+\COPY shows FROM /Users/isaacmfavila/Downloads/shows.csv DELIMITER ',' CSV HEADER;
 
 -- ---
 -- Test Data
