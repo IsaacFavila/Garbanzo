@@ -65,12 +65,41 @@ app.get('/genres', (req, res) => {
 app.get('/subgenres', (req, res) => {
   pool.query('select distinct subgenre from shows where subgenre is not null order by subgenre ASC')
     .then(({rows}) => {
-      res.status(200).send(rows)
+      res.status(200).send(rows);
     })
     .catch(err => {
       res.status(500).send(err);
     })
 })
+
+app.get('/suggestions', (req, res) => {
+  var platform = req.query.platform;
+  var genre = req.query.genre;
+  var subgenre = req.query.subgenre || null;
+  var length = req.query.length || null;
+
+  console.log(req.query);
+  var queryStr =  `select * from shows where platform = '${platform}' and genre = '${genre}' limit 3`;
+
+  if (length && !subgenre) {
+    queryStr = `select * from shows where platform = '${platform}' and genre = '${genre}' and length = '${length}'`;
+  }
+  if (length && subgenre ) {
+    queryStr = `select * from shows where platform = '${platform}' and subgenre = '${subgenre}' and length = '${length}'`;
+  }
+  if (subgenre && !length) {
+    queryStr = `select * from shows where platform = '${platform}' and subgenre = '${subgenre}'`;
+  }
+
+  pool.query(queryStr)
+    .then(({rows}) => {
+      res.status(200).send(rows);
+    })
+    .catch(err => {
+      res.status(500).send(err);
+    })
+})
+
 app.listen(port, function() {
   console.log(`listening on port ${port}`);
 });
