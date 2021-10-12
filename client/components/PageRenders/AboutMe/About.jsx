@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Show from '../Show.jsx';
+import Show from './Show.jsx';
 
 const About = ({home, shows}) => (
  <div>
