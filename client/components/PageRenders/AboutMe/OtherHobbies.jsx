@@ -2,9 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Hobbies = ({home}) => (
-  <div>Other hobbies
-    <div onClick={home}>Back to home</div>
-  </div>
+  <Center>
+    <div>Every once in a blue moon I will upload a youtube video. Here is my latest video.</div>
+    <iframe width="572" height="400" src="https://www.youtube.com/embed/v29OGudJ7cg?autoplay=1&start=35&mute=1" frameborder="0" allowfullscreen></iframe><br></br>
+    <button onClick={home}>Back to home</button>
+  </Center>
 );
+
+var Center = styled.div`
+  justify-content: center;
+`;
 
 export default Hobbies;

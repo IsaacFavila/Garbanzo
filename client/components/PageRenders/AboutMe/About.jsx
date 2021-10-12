@@ -1,75 +1,93 @@
 import React from 'react';
 import styled from 'styled-components';
+import Show from '../Show.jsx';
 
-const About = ({home}) => (
+const About = ({home, shows}) => (
  <div>
-    <Top>
+    <div>
+    I like to watch TV shows, anime, and the occasional movie. Netflix, Crunchyroll, and Hulu are my most used streaming platforms. I have used Disney+, HBO Max, and Amazon Prime, but not nearly as much. I am not that picky, and will watch whatever I find interesting.
+    </div>
+    <MAL>
+      <Text href='https://myanimelist.net/profile/bumfavbumbum' target='_blank' rel="noopener noreferrer">MyAnimeList Profile</Text>
+      <Bar>|</Bar>
+      <Text href='https://anime.plus/bumfavbumbum/ratings,anime' target='_blank' rel="noopener noreferrer">Rating Breakdown</Text>
+    </MAL>
+    <Flex>
       <div>
-      I like to watch TV shows, anime, and the occasional movie. Netflix, Crunchyroll, and Hulu are my most used streaming platforms. I have used Disney+, HBO Max, and Amazon Prime, but not nearly as much. I am not that picky, and will watch whatever I find interesting.
+        <h3>Platform</h3>
+        <Netflix>Netflix</Netflix>
+        <Crunchyroll>Crunchyroll</Crunchyroll>
+        <Hulu>Hulu</Hulu>
       </div>
-    </Top>
-    <br></br>
+      <Center>
+        <h3>Favorites</h3>
+        {shows.map((show) => <div>
+          {show.status === 'favorite'?<Show name={show.name} image={show.image} link={show.link} key={show.id}/>:''}</div>)}
+      </Center>
+      <Center>
+        <h3>Currently Watching</h3>
+        {shows.map((show) => <div>
+          {show.status === 'watching'?<Show name={show.name} image={show.image} link={show.link} key={show.id}/>:''}</div>)}
+      </Center>
+      <Center>
+        <h3>Recently Completed</h3>
+        {shows.map((show) => <div>
+          {show.status === 'recent'?<Show name={show.name} image={show.image} link={show.link} key={show.id}/>:''}</div>)}
+      </Center>
+      <Center>
+        <h3>Plan to Watch</h3>
+        {shows.map((show) => <div>
+          {show.status === 'plan'?<Show name={show.name} image={show.image} link={show.link} key={show.id}/>:''}</div>)}
+      </Center>
+    </Flex><br></br>
    <Body>
-    <Services>
-      <br></br>
-      <Netflix>Netflix</Netflix>
-      <Crunchyroll>Crunchyroll</Crunchyroll>
-      <Hulu>Hulu</Hulu>
-    </Services>
-    <Favorites><u>Favorites</u>
-      <div>Queen's Gambit</div>
-      <div>Steins Gate</div>
-      <div>Brooklyn Nine-Nine</div>
-    </Favorites>
-    <Current><u>Currently Watching</u>
-      <div>The Witcher</div>
-      <div>One Piece</div>
-      <div>-</div>
-    </Current>
-    <Recent><u>Recently Completed</u>
-      <div>Lucifer</div>
-      <div>My Hero S5</div>
-      <div>Are You the One S4 </div>
-    </Recent>
-    <PTW><u>Plan to watch</u>
-      <div>Squid Game</div>
-      <div>Demon Slayer S2</div>
-      <div>-</div>
-    </PTW>
-   </Body><br></br>
-   <Body>
-      <div>Favorite movies</div>
-   </Body><br></br>
-   <Body>
-      <div onClick={home}>Back to home</div>
+      <button onClick={home}>Back to home</button>
    </Body>
  </div>
 );
 
 
-var Top = styled.div`
-  display: flex;
-`;
-var Body = styled.div`
+var Flex = styled.div`
   display: flex;
   justify-content: space-between;
 `;
-var Services = styled.div``;
+
+var MAL = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
+
+var Center = styled.div`
+  justify-content: center;
+  text-align: center;
+`;
+
+var Body = styled.div`
+  display: flex;
+`;
+var Bar = styled.div`
+font-size: 12px;
+  margin-right: 5px;
+  margin-left: 5px;
+`;
 
 var Crunchyroll = styled.div`
   color: orange;
+  margin-bottom: 15px;
 `;
 var Netflix = styled.div`
   color: red;
+  margin-bottom: 15px;
 `;
 var Hulu = styled.div`
   color: green;
+  margin-bottom: 15px;
 `;
-
-var Current = styled.div``;
-var Recent = styled.div``;
-var Favorites = styled.div``;
-var PTW = styled.div``;
-
-
+var Text = styled.a`
+  font-size: 12px;
+  color: #d4b5a9;
+  &:hover {
+    color: #74cc66;
+  }
+`;
 export default About;

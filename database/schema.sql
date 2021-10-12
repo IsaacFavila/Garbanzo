@@ -37,6 +37,8 @@ CREATE TABLE credentials (
 );
 
 
+\COPY credentials FROM /Users/isaacmfavila/Downloads/credentials.csv DELIMITER ',' CSV HEADER;
+
 -- ---
 -- Test Data
 -- ---

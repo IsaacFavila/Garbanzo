@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const AboutMe = ({about, hobby, show, dropdown}) => (<AboutStyle>{show === false ? <Text onClick={dropdown}>About me +</Text> : <div><Text onClick={dropdown}>About me -</Text><Subtext onClick={about}>Credentials</Subtext><Subtext onClick={hobby}>Other hobbies</Subtext></div>}</AboutStyle>);
+const AboutMe = ({about, hobby, show, dropdown}) => (<AboutStyle>{show === false ? <Text onClick={dropdown}>About me +</Text> : <div><Text onClick={dropdown}>About me -</Text><Subtext onClick={about}>Credentials</Subtext><Subtext onClick={hobby}>YouTube</Subtext></div>}</AboutStyle>);
 
 var AboutStyle = styled.div`
   text-align: center;
