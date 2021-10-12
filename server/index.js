@@ -35,9 +35,8 @@ app.get('/credentials', (req, res) => {
       res.status(500).send(err);
     })
 })
-
 app.get('/favorites', (req, res) => {
-  pool.query('select * from shows where favorite = true')
+  pool.query('select * from shows where favorite = true order by genre ASC, subgenre, name ASC')
     .then(({rows}) => {
       res.status(200).send(rows)
     })
@@ -63,7 +62,6 @@ app.get('/subgenres', (req, res) => {
       res.status(500).send(err);
     })
 })
-
 app.listen(port, function() {
   console.log(`listening on port ${port}`);
 });
