@@ -6,8 +6,9 @@ class GenreShow extends React.Component {
     super(props);
     this.state = {
       name: this.props.name,
-      image: this.props.image,
-      link: this.props.link
+      // image: this.props.image,
+      link: this.props.link,
+      platform: this.props.platform[0].toUpperCase() + this.props.platform.slice(1)
     };
   }
 
@@ -15,7 +16,9 @@ class GenreShow extends React.Component {
     return(
       <Container>
         {/* <img src={this.state.image}/> */}
+        <Image>x</Image>
         <Text href={this.state.link} target='_blank' rel="noopener noreferrer" key={this.state.name}>{this.state.name}</Text>
+        <Platform>Available on {this.state.platform}</Platform>
       </Container>
     );
   }
@@ -28,8 +31,21 @@ var Text = styled.a`
   }
 `;
 
+var Image = styled.div`
+  background-color: blue;
+  height: 300px;
+`;
+
+var Platform = styled.div`
+  font-size: 12px;
+`;
+
 var Container = styled.div`
   margin-bottom: 15px;
+  background-color: black;
+  justify-content:center;
+  text-align:center;
+  width: 200px;
 `;
 
 export default GenreShow;

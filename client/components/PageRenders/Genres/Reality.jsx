@@ -6,7 +6,7 @@ const Reality = ({home, shows}) => (
   <div>
     <Header>Reality</Header>
     <Shows>
-    {shows.map((show) => <S><GenreShow name={show.name} link={show.link} key={show.id}/></S>)}<br></br>
+    {shows.map((show) => <S><GenreShow name={show.name} platform={show.platform} link={show.link} key={show.id}/></S>)}<br></br>
     </Shows>
     <button onClick={home}>Back to home</button>
   </div>
