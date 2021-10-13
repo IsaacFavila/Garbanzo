@@ -4,12 +4,12 @@ import GenreShow from './GenreShow.jsx';
 
 const Results = ({home, random, shows}) => (
   <div>
-    <Header>Results</Header>
+    <Header>Result(s)</Header>
     <Shows>
     {shows.map((show) => <S><GenreShow name={show.name} platform={show.platform} image={show.image} link={show.link} key={show.id}/></S>)}<br></br>
     </Shows>
-    <button onClick={home}>Get a new recommendation</button>
-    <button onClick={random}>Get random</button>
+    <button onClick={home}>New recommendation</button>
+    <button onClick={random}>Random</button>
   </div>
 );
 
