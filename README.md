@@ -28,7 +28,7 @@ Babel
 <br />
 
 ### Styling
-SASS <img align="left" alt="CSS3" width="30px" src="" />
+SASS
 <br />
 
 ### Database
