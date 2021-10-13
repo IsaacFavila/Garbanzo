@@ -54,4 +54,8 @@ button:hover {
   display: -ms-flexbox;
   display: flex;
 }
+
+h3 {
+  margin-top: -2px;
+}
 /*# sourceMappingURL=styles.css.map */

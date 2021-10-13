@@ -4,7 +4,7 @@ import GenreShow from './GenreShow.jsx';
 
 const Results = ({home, random, shows}) => (
   <div>
-    <Header>Result(s)</Header>
+    <h3>Result(s)</h3>
     <Shows>
     {shows.map((show) => <S><GenreShow name={show.name} platform={show.platform} image={show.image} link={show.link} key={show.id}/></S>)}<br></br>
     </Shows>
@@ -13,9 +13,7 @@ const Results = ({home, random, shows}) => (
   </div>
 );
 
-var Header = styled.h3`
-  margin-top: -2px;
-`;
+
 var Shows = styled.div`
   display: flex;
   justify-content: space-between;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Hobbies = ({home}) => (
   <div>
-    <Header>MAL</Header>
+    <h3>MAL</h3>
     <div>If you are curious, here is my other anime related information.</div>
     <ul>
     <li>
@@ -29,7 +29,4 @@ var Text = styled.a`
   }
 `;
 
-var Header = styled.h3`
-  margin-top: -2px;
-`;
 export default Hobbies;

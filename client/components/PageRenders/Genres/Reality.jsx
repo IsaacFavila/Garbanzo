@@ -4,7 +4,7 @@ import GenreShow from '../GenreShow.jsx';
 
 const Reality = ({home, shows}) => (
   <div>
-    <Header>Reality</Header>
+    <h3>Reality</h3>
     <Shows>
     {shows.map((show) => <S><GenreShow name={show.name} platform={show.platform} image={show.image} link={show.link} key={show.id}/></S>)}<br></br>
     </Shows>
@@ -12,9 +12,7 @@ const Reality = ({home, shows}) => (
   </div>
 );
 
-var Header = styled.h3`
-  margin-top: -2px;
-`;
+
 var Shows = styled.div`
   display: flex;
   justify-content: space-between;
