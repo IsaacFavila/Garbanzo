@@ -2,13 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import GenreShow from './GenreShow.jsx';
 
-const Results = ({home, shows}) => (
+const Results = ({home, random, shows}) => (
   <div>
     <Header>Results</Header>
     <Shows>
     {shows.map((show) => <S><GenreShow name={show.name} platform={show.platform} image={show.image} link={show.link} key={show.id}/></S>)}<br></br>
     </Shows>
     <button onClick={home}>Get a new recommendation</button>
+    <button onClick={random}>Get random</button>
   </div>
 );
 

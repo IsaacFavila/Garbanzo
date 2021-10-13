@@ -71,6 +71,16 @@ app.get('/subgenres', (req, res) => {
       res.status(500).send(err);
     })
 })
+app.get('/random', (req, res) => {
+  var random = Math.floor(Math.random() * (25 - 1 + 1) + 1);
+  pool.query(`select * from shows where id = ${random}`)
+    .then(({rows}) => {
+      res.status(200).send(rows);
+    })
+    .catch(err => {
+      res.status(500).send(err);
+    })
+})
 
 app.get('/suggestions', (req, res) => {
   var platform = req.query.platform;
