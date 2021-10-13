@@ -14,47 +14,15 @@ class Show extends React.Component {
 
   render() {
     return(
-      <Container>
-        <ImageContainer>
-        <Image src={this.state.image}/>
-        </ImageContainer>
-        <Text href={this.state.link} target='_blank' rel="noopener noreferrer" >{this.state.name}</Text>
-        <Platform>Available on {this.state.platform}</Platform>
-      </Container>
+      <div className='credcontainer'>
+      <div className='imagecontainer'>
+      <img className='image' src={this.state.image}/>
+      </div>
+      <a className='credimg' href={this.state.link} target='_blank' rel="noopener noreferrer" key={this.state.name}>{this.state.name}</a>
+      <div className='credplat'>Available on {this.state.platform}</div>
+    </div>
     );
   }
 }
-
-var Text = styled.a`
-  font-size: 12px;
-  color: black;
-  &:hover {
-    color: blue;
-  }
-`;
-var ImageContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-`;
-var Image = styled.img`
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
-`;
-
-var Container = styled.div`
-  margin: 15px auto;
-  background-image: linear-gradient(120deg, #e2dd3f, #a06468);
-  width: 125px;
-  justify-content: center;
-  text-align:center;
-  align-items: center;
-`;
-var Platform = styled.div`
-  font-size: 10px;
-  color: black;
-`;
 
 export default Show;

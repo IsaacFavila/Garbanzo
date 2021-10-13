@@ -1,6 +1,8 @@
 $BackgroundColor: #2e4744;
 $TextColor: #d4b5a9;
 $HoverColor: #74cc66;
+$ImageText: black;
+$ImageHoverText: blue;
 
 body {
   background-color: $BackgroundColor;
@@ -56,4 +58,71 @@ button:hover {
 
 h3 {
   margin-top: -2px;
+}
+
+.imagetext {
+  color: $ImageText;
+  &:hover {
+    color: $ImageHoverText;
+  }
+}
+.platformtext {
+  font-size: 12px;
+  color: $ImageText;
+}
+.credimg {
+  font-size: 12px;
+  color: $ImageText;
+  &:hover {
+    color: $ImageHoverText;
+  }
+}
+.credplat {
+  font-size: 10px;
+  color: $ImageText;
+}
+
+.imagecontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.image {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.showcontainer {
+  margin-bottom: 15px;
+  background-image: linear-gradient(120deg, #e2dd3f, #a06468);
+  justify-content:center;
+  text-align:center;
+  width: 200px;
+}
+.credcontainer {
+  margin: 15px auto;
+  background-image: linear-gradient(120deg, #e2dd3f, #a06468);
+  width: 125px;
+  justify-content:center;
+  text-align:center;
+  width: 200px;
+}
+
+.mal {
+  color: $TextColor;
+  margin-bottom: 15px;
+  &:hover {
+    color: $HoverColor;
+  }
+}
+
+.aboutflex {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.aboutcenter {
+  text-align: center;
+  justify-content:center;
 }
