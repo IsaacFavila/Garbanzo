@@ -161,4 +161,59 @@ h3 {
       -ms-flex-pack: center;
           justify-content: center;
 }
+
+.about {
+  text-align: center;
+  cursor: pointer;
+  margin-top: 15px;
+  border: solid 1px;
+}
+
+.abouttext {
+  cursor: pointer;
+  vertical-align: middle;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.abouttext:hover {
+  color: #74cc66;
+}
+
+.aboutsub {
+  cursor: pointer;
+  vertical-align: middle;
+  margin-bottom: 15px;
+  font-size: 12px;
+}
+
+.aboutsub:hover {
+  color: #74cc66;
+}
+
+.genrehead {
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.genrehead:hover {
+  color: #74cc66;
+}
+
+.genreborder {
+  border: solid 1px;
+}
+
+.genretext {
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 12px;
+  text-align: center;
+}
+
+.genretext:hover {
+  color: #74cc66;
+}
 /*# sourceMappingURL=styles.css.map */

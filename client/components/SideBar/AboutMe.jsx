@@ -1,31 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const AboutMe = ({about, hobby, show, dropdown}) => (<AboutStyle>{show === false ? <Text onClick={dropdown}>About me +</Text> : <div><Text onClick={dropdown}>About me -</Text><Subtext onClick={about}>Watch Activity</Subtext><Subtext onClick={hobby}>MyAnimeList</Subtext></div>}</AboutStyle>);
-
-var AboutStyle = styled.div`
-  text-align: center;
-  cursor: pointer;
-  margin-top: 15px;
-  border: solid 1px;
-`;
-var Text = styled.div`
-  cursor: pointer;
-  vertical-align: middle;
-  margin-top:15px;
-  margin-bottom: 15px;
-  &:hover {
-    color: #74cc66;
-  }
-`;
-var Subtext = styled.div`
-  cursor: pointer;
-  vertical-align: middle;
-  margin-bottom: 15px;
-  font-size:12px;
-  &:hover {
-    color: #74cc66;
-  }
-`;
+const AboutMe = ({about, hobby, show, dropdown}) => (<div className='about'>{show === false ? <div className='abouttext' onClick={dropdown}>About me +</div> : <div><div className='abouttext' onClick={dropdown}>About me -</div><div className='aboutsub' onClick={about}>Watch Activity</div><div className='aboutsub' onClick={hobby}>MyAnimeList</div></div>}</div>);
 
 export default AboutMe;

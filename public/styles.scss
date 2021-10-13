@@ -126,3 +126,51 @@ h3 {
   text-align: center;
   justify-content:center;
 }
+
+.about {
+  text-align: center;
+  cursor: pointer;
+  margin-top: 15px;
+  border: solid 1px;
+}
+
+.abouttext {
+  cursor: pointer;
+  vertical-align: middle;
+  margin-top:15px;
+  margin-bottom: 15px;
+  &:hover {
+    color: $HoverColor;
+  }
+}
+.aboutsub {
+  cursor: pointer;
+  vertical-align: middle;
+  margin-bottom: 15px;
+  font-size:12px;
+  &:hover {
+    color: $HoverColor;
+  }
+}
+
+.genrehead {
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  &:hover {
+    color: $HoverColor;
+  }
+}
+.genreborder {
+  border: solid 1px;
+}
+.genretext {
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 12px;
+  text-align: center;
+  &:hover {
+    color: $HoverColor;
+  }
+}
