@@ -28,7 +28,7 @@ Babel <img align="left" width="30px" src="https://miro.medium.com/max/768/1*8jqp
 <br />
 
 ### Styling
-SASS <img align="left" width="30px" src"https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/1280px-Sass_Logo_Color.svg.png" />
+SASS <img align="left" width="30px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/1280px-Sass_Logo_Color.svg.png" />
 <br />
 
 ### Database
