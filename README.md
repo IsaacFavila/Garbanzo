@@ -24,7 +24,7 @@ Express.js <img align="left" alt="Express" width="30px" src="https://github.com/
 Webpack <img align="left" alt="Webpack" width="30px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/webpack/webpack-original.svg" />
 <br />
 
-Babel
+Babel <img align="left" width="30px" src="https://cdn.imgbin.com/8/4/22/imgbin-source-to-source-compiler-javascript-ecmascript-node-js-that-s-Kft9K4nE9YHrMp6sdq0BQ09cK.jpg" />
 <br />
 
 ### Styling
