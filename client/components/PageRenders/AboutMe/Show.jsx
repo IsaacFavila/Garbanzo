@@ -14,13 +14,7 @@ class Show extends React.Component {
 
   render() {
     return(
-      <div className='credcontainer'>
-      <div className='imagecontainer'>
-      <img className='image' src={this.state.image}/>
-      </div>
-      <a className='credimg' href={this.state.link} target='_blank' rel="noopener noreferrer" key={this.state.name}>{this.state.name}</a>
-      <div className='credplat'>Available on {this.state.platform}</div>
-    </div>
+      <div className='credcontainer'><div className='imagecontainer'><img className='image' src={this.state.image}/></div><a className='credimg' href={this.state.link} target='_blank' rel="noopener noreferrer" key={this.state.name}>{this.state.name}</a><div className='credplat'>Available on {this.state.platform}</div></div>
     );
   }
 }
