@@ -24,11 +24,11 @@ Express.js <img align="left" alt="Express" width="30px" src="https://github.com/
 Webpack <img align="left" alt="Webpack" width="30px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/webpack/webpack-original.svg" />
 <br />
 
-Babel <img align="left" width="30px" src="https://cdn.imgbin.com/8/4/22/imgbin-source-to-source-compiler-javascript-ecmascript-node-js-that-s-Kft9K4nE9YHrMp6sdq0BQ09cK.jpg" />
+Babel <img align="left" width="30px" src="https://miro.medium.com/max/768/1*8jqpYKlBSGRBxAJ_uZK8yg.png" />
 <br />
 
 ### Styling
-SASS
+SASS <img align="left" width="30px" src"https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/1280px-Sass_Logo_Color.svg.png" />
 <br />
 
 ### Database
