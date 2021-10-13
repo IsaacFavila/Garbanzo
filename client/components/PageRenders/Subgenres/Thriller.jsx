@@ -6,7 +6,7 @@ const Thriller = ({home, shows}) => (
   <div>
     <Header>Thriller</Header>
     <Shows>
-    {shows.map((show) => <S><GenreShow name={show.name} platform={show.platform} link={show.link} key={show.id}/></S>)}<br></br>
+    {shows.map((show) => <S><GenreShow name={show.name} platform={show.platform} image={show.image} link={show.link} key={show.id}/></S>)}<br></br>
     </Shows>
     <button onClick={home}>Back to home</button>
   </div>

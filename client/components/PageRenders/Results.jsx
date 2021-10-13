@@ -6,9 +6,9 @@ const Results = ({home, shows}) => (
   <div>
     <Header>Results</Header>
     <Shows>
-    {shows.map((show) => <S><GenreShow name={show.name} link={show.link} key={show.id}/></S>)}<br></br>
+    {shows.map((show) => <S><GenreShow name={show.name} platform={show.platform} image={show.image} link={show.link} key={show.id}/></S>)}<br></br>
     </Shows>
-    <button onClick={home}>Get a new suggestion</button>
+    <button onClick={home}>Get a new recommendation</button>
   </div>
 );
 
