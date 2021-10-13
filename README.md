@@ -24,7 +24,7 @@ Express.js <img align="left" alt="Express" width="30px" src="https://github.com/
 Webpack <img align="left" alt="Webpack" width="30px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/webpack/webpack-original.svg" />
 <br />
 
-Babel <img align="left" width="30px" src="https://miro.medium.com/max/768/1*8jqpYKlBSGRBxAJ_uZK8yg.png" />
+Babel <img align="left" width="30px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Babel_Logo.svg/1200px-Babel_Logo.svg.png" />
 <br />
 
 ### Styling
@@ -32,11 +32,11 @@ SASS <img align="left" width="30px" src="https://upload.wikimedia.org/wikipedia/
 <br />
 
 ### Database
-PostgreSQL <img align="left" width="30px" src="https://icon2.cleanpng.com/20180315/ifq/kisspng-postgresql-logo-computer-software-database-open-source-vector-images-5aaa26e1a38cf4.7370214515211005136699.jpg" />
+PostgreSQL <img align="left" width="30px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1200px-Postgresql_elephant.svg.png" />
 <br />
 
 ### Deployment
-AWS EC2 <img align="left" width="30px" src="https://image.pngaaa.com/681/876681-middle.png" />
+AWS EC2 <img align="left" width="30px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1024px-Amazon_Web_Services_Logo.svg.png" />
 <br />
 
 ### Testing
