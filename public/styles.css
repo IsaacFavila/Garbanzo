@@ -55,6 +55,16 @@ button:hover {
   display: flex;
 }
 
+.Shows {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 10px auto;
+}
+
 h3 {
   margin-top: -2px;
 }
