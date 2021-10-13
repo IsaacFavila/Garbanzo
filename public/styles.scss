@@ -1,14 +1,49 @@
+$BackgroundColor: #2e4744;
+$TextColor: #d4b5a9;
+$HoverColor: #74cc66;
+
 body {
-  background-color: #2e4744;
+  background-color: $BackgroundColor;
+  color: $TextColor;
+  font-family: Arial, sans-serif;
 }
 button {
-  background-color: #2e4744;
-  color: #d4b5a9;
-  border: solid #d4b5a9 1px;
+  background-color: $BackgroundColor;
+  color: $TextColor;
+  border: solid $TextColor 1px;
   cursor: pointer;
   padding: 13px;
   margin-right: 15px;
 }
 button:hover {
-  color: #74cc66;
+  color: $HoverColor;
+}
+.title {
+  font-size: 36px;
+  text-align: left;
+  padding: 10px;
+  width: 44%;
+  cursor: pointer;
+}
+.title:hover {
+  color: $HoverColor
+}
+.left {
+  width: 20%;
+}
+.right {
+  width: 80%;
+  margin-left: 15px;
+  margin-top: 15px;
+  margin-right: 15px;
+}
+.platform {
+  margin-bottom: 15px;
+}
+.question {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.flex {
+  display: flex;
 }
