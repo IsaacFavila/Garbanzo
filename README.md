@@ -1,2 +1,1 @@
-# laughing-garbanzo
-Personal Project
+# Project Laughing Garbanzo
