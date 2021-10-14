@@ -28,7 +28,7 @@ Babel <img align="left" width="30px" src="https://user-images.githubusercontent.
 <br />
 
 ### Styling
-SASS <img align="left" width="30px" src="https://sass-lang.com/assets/img/styleguide/seal-color-reversed-c50d9b78.png" />
+SASS <img align="left" width="30px" src="https://sass-lang.com/assets/img/styleguide/seal-color-aef0354c.png" />
 <br />
 
 ### Database
