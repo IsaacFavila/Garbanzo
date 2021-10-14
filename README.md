@@ -24,7 +24,7 @@ Express.js <img align="left" alt="Express" width="30px" src="https://github.com/
 Webpack <img align="left" alt="Webpack" width="30px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/webpack/webpack-original.svg" />
 <br />
 
-Babel <img align="left" width="30px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Babel_Logo.svg/1200px-Babel_Logo.svg.png" />
+Babel <img align="left" width="30px" src="https://user-images.githubusercontent.com/3025322/87547253-bf050400-c6a2-11ea-950a-280311bc6cc8.png" />
 <br />
 
 ### Styling
