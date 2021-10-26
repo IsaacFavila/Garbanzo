@@ -1,4 +1,4 @@
-# Project Laughing Garbanzo
+# Project Garbanzo
 
 ## Table of Contents
 - [Technologies Used](#technologies-used)
