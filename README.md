@@ -6,6 +6,11 @@
 - [How to View](#how-to-view-and-interact-with-retail-portal)
 
 ## Screenshots
+<img src="https://i.imgur.com/itDdbAV.png"/>
+<img src="https://i.imgur.com/4TuSQ7w.png"/>
+<img src="https://i.imgur.com/nhHdHla.png"/>
+<img src="https://i.imgur.com/ks8APtA.png"/>
+<img src="https://i.imgur.com/si6aXqh.png"/>
 
 
 ## Technologies Used
