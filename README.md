@@ -1,8 +1,12 @@
 # Project Garbanzo
 
 ## Table of Contents
+- [Screenshots](#screenshots)
 - [Technologies Used](#technologies-used)
 - [How to View](#how-to-view-and-interact-with-retail-portal)
+
+## Screenshots
+
 
 ## Technologies Used
 
