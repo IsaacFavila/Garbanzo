@@ -46,7 +46,7 @@ Jest <img align="left" alt="Jest" width="30px" src="https://raw.githubuserconten
 
 ## How to View and Interact with Retail Portal
 To view on a local machine, please follow these instructions:
-1. Fork the repository and clone to your local machine using
+1. Fork the repository and clone to your local machine using `git clone https://github.com/IsaacFavila/Garbanzo.git`
 2. Run `npm install` to download dependencies.
 3. Run `npm run react-dev` to launch the Webpack bundler.
 4. Run `npm run start` to launch the Server environment.
